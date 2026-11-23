@@ -541,23 +541,23 @@ tenantProvisioner:
   additionalEnv:
 
 image:
-  dispatcher: dispatcher:5.4.3
-  apim: ingress:5.4.3
-  data: portal-data:5.4.3
-  tps: tenant-provisioning-service:5.4.3
-  analytics: analytics-server:5.4.3
-  authenticator: authenticator:5.4.3
-  intelligenceServer: intelligence-server:5.4.3
-  dbUpgrade: db-upgrade-portal:5.4.3
-  rbacUpgrade: db-upgrade-rbac:5.4.3
-  upgradeVerify: upgrade-verify:5.4.3
-  tlsManager: tls-automator:5.4.3
+  dispatcher: dispatcher:5.4.2.6
+  apim: ingress:5.4.2.6
+  data: portal-data:5.4.2.6
+  tps: tenant-provisioning-service:5.4.2.6
+  analytics: analytics-server:5.4.2.6
+  authenticator: authenticator:5.4.2.6
+  intelligenceServer: intelligence-server:5.4.2.6
+  dbUpgrade: db-upgrade-portal:5.4.2.6
+  rbacUpgrade: db-upgrade-rbac:5.4.2.6
+  upgradeVerify: upgrade-verify:5.4.2.6
+  tlsManager: tls-automator:5.4.2.6
 
 ##
 ## Subchart Configuration
 ##
 seaweedfs:
-  image: seaweedfs:5.4.3
+  image: seaweedfs:5.4.2.6
   persistence:
     storage:
       seaweedfs: 50Gi
@@ -990,14 +990,14 @@ druid:
   # affinity: {}
 
   image:
-    zookeeper: zookeeper:5.4.3
-    broker: druid:5.4.3
-    coordinator: druid:5.4.3
-    middlemanager: druid:5.4.3
-    minio: minio:5.4.3
-    historical: druid:5.4.3
-    kafka: kafka:5.4.3
-    ingestion: ingestion-server:5.4.3
+    zookeeper: zookeeper:5.4.2.6
+    broker: druid:5.4.2.6
+    coordinator: druid:5.4.2.6
+    middlemanager: druid:5.4.2.6
+    minio: minio:5.4.2.6
+    historical: druid:5.4.2.6
+    kafka: kafka:5.4.2.6
+    ingestion: ingestion-server:5.4.2.6
 
 
 # Configuration for the custom Kafka subchart.
@@ -1014,8 +1014,8 @@ kafka:
 
   # Image configuration
   image:
-    kafka: kafka:5.4.3
-    autoDiscovery: tls-automator:5.4.3  # Used for Kafka broker discovery (overridden by parent chart's image.autoDiscovery)
+    kafka: kafka:5.4.2.6
+    autoDiscovery: tls-automator:5.4.2.6  # Used for Kafka broker discovery (overridden by parent chart's image.autoDiscovery)
     pullPolicy: IfNotPresent
 
   # Kafka deployment configuration
@@ -1131,7 +1131,7 @@ rabbitmq:
   image:
     registry: caapim
     repository: message-broker
-    tag: "5.4.3"
+    tag: "5.4.2.6"
     pullSecrets:
       - broadcom-apim
   pdb:
